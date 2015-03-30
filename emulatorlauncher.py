@@ -12,7 +12,7 @@ import settings.recalboxSettings as recalSettings
 import settings.libretroSettings as libretroSettings
 import generators.libretro.libretroGenerator as libretroGen
 import controllersConfig as controllers
-import utils.runner
+import utils.runner as runner
 
 parser = argparse.ArgumentParser(description='emulator-launcher script')
 parser.add_argument("-system", help="select the system to launch", type=str, required=True)
@@ -35,22 +35,35 @@ args = parser.parse_args()
 
 # List libretro with their cores, and default video modes
 libretro = dict()
-libretro["psx"] = {'name' : 'psx', 'video_mode': 4, 'core': "pcsx_rearmed"}
-libretro["snes"] = {'name' : 'snes', 'video_mode': 4, 'core': "pocketsnes"}
+libretro["psx"] = {'name': 'psx', 'video_mode': 4, 'core': "pcsx_rearmed"}
+libretro["snes"] = {'name': 'snes', 'video_mode': 4, 'core': "pocketsnes"}
 
 
 system = args.system
 
-playersControllers = controllers.loadControllerConfig(args.p1index, args.p1guid, args.p1name, args.p2index, args.p2guid, args.p2name, args.p3index, args.p3guid, args.p3name, args.p4index, args.p4guid, args.p4name)
+playersControllers = controllers.loadControllerConfig(
+    args.p1index,
+    args.p1guid,
+    args.p1name,
+    args.p2index,
+    args.p2guid,
+    args.p2name,
+    args.p3index,
+    args.p3guid,
+    args.p3name,
+    args.p4index,
+    args.p4guid,
+    args.p4name
+)
 
 
-class Command : 
+class Command:
     def __init__(self, videoMode, commandline):
         self.videoMode = videoMode
-        self.commandLine = commandLine
+        self.commandLine = commandline
 
 # Main Program
 # A generator ill configure its emulator, and return a command
-if system in libretro :
-	command = libretroGen.run(libretro[system], playersControllers)
-	runner.run(command)	
+if system in libretro:
+    command = libretroGen.run(libretro[system], playersControllers)
+    runner.run(command)
