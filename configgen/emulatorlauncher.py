@@ -70,6 +70,7 @@ emulators["atari2600"] = Emulator(name='atari2600', emulator='libretro', core='s
 emulators["msx"] = Emulator(name='msx', emulator='libretro', core='fmsx')
 emulators["prboom"] = Emulator(name='prboom', emulator='libretro', core='prboom')
 emulators["psx"] = Emulator(name='psx', emulator='libretro', core='pcsx_rearmed')
+emulators["atari7800"] = Emulator(name='atari7800', emulator='libretro', core='prosystem')
 
 
 
