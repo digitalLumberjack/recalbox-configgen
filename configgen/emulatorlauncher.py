@@ -56,11 +56,13 @@ emulators["odyssey2"] = Emulator(name='odyssey2', emulator='libretro', core='o2e
 emulators["zx81"] = Emulator(name='zx81', emulator='libretro', core='81')
 #
 emulators["ngp"] = Emulator(name='ngp', emulator='libretro', core='mednafen_ngp')
+emulators["ngpc"] = Emulator(name='ngpc', emulator='libretro', core='mednafen_ngp')
 emulators["gw"] = Emulator(name='gw', emulator='libretro', core='gw')
 emulators["vectrex"] = Emulator(name='vectrex', emulator='libretro', core='vecx')
 emulators["lynx"] = Emulator(name='lynx', emulator='libretro', core='mednafen_lynx')
 emulators["lutro"] = Emulator(name='lutro', emulator='libretro', core='lutro')
 emulators["wswan"] = Emulator(name='wswan', emulator='libretro', core='mednafen_wswan', ratio='16/10')
+emulators["wswancolor"] = Emulator(name='wswancolor', emulator='libretro', core='mednafen_wswan', ratio='16/10')
 emulators["pcengine"] = Emulator(name='pcengine', emulator='libretro', core='mednafen_supergrafx')
 emulators["atari2600"] = Emulator(name='atari2600', emulator='libretro', core='stella')
 emulators["atari7800"] = Emulator(name='atari7800', emulator='libretro', core='prosystem')
