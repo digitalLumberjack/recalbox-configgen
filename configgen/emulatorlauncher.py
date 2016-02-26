@@ -71,6 +71,7 @@ emulators["atari7800"] = Emulator(name='atari7800', emulator='libretro', core='p
 emulators["prboom"] = Emulator(name='prboom', emulator='libretro', core='prboom')
 emulators["psx"] = Emulator(name='psx', emulator='libretro', core='pcsx_rearmed')
 emulators["cavestory"] = Emulator(name='cavestory', emulator='libretro', core='nxengine')
+emulators["2048"] = Emulator(name='2048', emulator='libretro', core='2048')
 emulators["imageviewer"] = Emulator(name='imageviewer', emulator='libretro', core='imageviewer')
 emulators["scummvm"] = Emulator(name='scummvm', emulator='scummvm', videomode='default')
 
