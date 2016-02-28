@@ -69,6 +69,7 @@ emulators["pcengine"] = Emulator(name='pcengine', emulator='libretro', core='med
 emulators["atari2600"] = Emulator(name='atari2600', emulator='libretro', core='stella')
 emulators["atari7800"] = Emulator(name='atari7800', emulator='libretro', core='prosystem')
 emulators["prboom"] = Emulator(name='prboom', emulator='libretro', core='prboom')
+emulators["quake"] = Emulator(name='quake', emulator='libretro', core='tyrquake')
 emulators["psx"] = Emulator(name='psx', emulator='libretro', core='pcsx_rearmed')
 emulators["cavestory"] = Emulator(name='cavestory', emulator='libretro', core='nxengine')
 emulators["imageviewer"] = Emulator(name='imageviewer', emulator='libretro', core='imageviewer')
