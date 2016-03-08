@@ -25,6 +25,10 @@ fbaCustom = fbaRoot + 'fba2x.cfg'
 fbaCustomOrigin = fbaRoot + 'fba2x.cfg.origin'
 fba2xBin = '/usr/bin/fba2x'
 
+pokeminiBin = '/usr/emulators/pokemini/PokeMini'
+pokeminiCustom = '/usr/emulators/pokemini/pokemini.cfg'
+pokeminiJoy = '/usr/emulators/pokemini/pokemini_sdl2.cfg'
+
 mupenConf = CONF + '/mupen64/'
 mupenCustom = mupenConf + "mupen64plus.cfg"
 mupenInput = mupenConf + "InputAutoCfg.ini"

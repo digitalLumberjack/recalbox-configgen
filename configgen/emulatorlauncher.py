@@ -8,6 +8,7 @@ import generators
 from generators.libretro.libretroGenerator import LibretroGenerator
 from generators.fba2x.fba2xGenerator import Fba2xGenerator
 from generators.mupen.mupenGenerator import MupenGenerator
+from generators.pokemini.pokeminiGenerator import pokeminiGenerator
 from generators.kodi.kodiGenerator import KodiGenerator
 from generators.moonlight.moonlightGenerator import MoonlightGenerator
 from generators.scummvm.scummvmGenerator import ScummVMGenerator
@@ -22,6 +23,7 @@ generators = {
     'libretro': LibretroGenerator(),
     'fba2x': Fba2xGenerator(),
     'mupen64plus': MupenGenerator(),
+    'pokemini': pokeminiGenerator(),
     'kodi': KodiGenerator(),
     'moonlight': MoonlightGenerator(),
     'scummvm': ScummVMGenerator()
@@ -38,6 +40,7 @@ emulators["gb"] = Emulator(name='gb', emulator='libretro', core='gambatte')
 emulators["gbc"] = Emulator(name='gbc', emulator='libretro', core='gambatte')
 emulators["fds"] = Emulator(name='fds', emulator='libretro', core='nestopia')
 emulators["virtualboy"] = Emulator(name='virtualboy', emulator='libretro', core='vb')
+emulators["pokemon"] = Emulator(name='pokemon', emulator='pokemini')
 # Sega
 emulators["sg1000"] = Emulator(name='sg1000', emulator='libretro', core='genesisplusgx')
 emulators["mastersystem"] = Emulator(name='mastersystem', emulator='libretro', core='picodrive')
