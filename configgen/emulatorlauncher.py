@@ -58,6 +58,7 @@ emulators["atarist"] = Emulator(name='atarist', emulator='libretro', core='hatar
 emulators["zxspectrum"] = Emulator(name='zxspectrum', emulator='libretro', core='fuse')
 emulators["odyssey2"] = Emulator(name='odyssey2', emulator='libretro', core='o2em')
 emulators["zx81"] = Emulator(name='zx81', emulator='libretro', core='81')
+emulators["atari800"] = Emulator(name='atari800', emulator='libretro', core='atari800')
 #
 emulators["ngp"] = Emulator(name='ngp', emulator='libretro', core='mednafen_ngp')
 emulators["gw"] = Emulator(name='gw', emulator='libretro', core='gw')
