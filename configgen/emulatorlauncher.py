@@ -2,7 +2,7 @@
 
 import argparse
 import time
-
+from sys import exit
 from Emulator import Emulator
 import generators
 from generators.libretro.libretroGenerator import LibretroGenerator
@@ -10,7 +10,9 @@ from generators.fba2x.fba2xGenerator import Fba2xGenerator
 from generators.mupen.mupenGenerator import MupenGenerator
 from generators.kodi.kodiGenerator import KodiGenerator
 from generators.moonlight.moonlightGenerator import MoonlightGenerator
+from generators.pokemini.pokeminiGenerator import PokeminiGenerator
 from generators.scummvm.scummvmGenerator import ScummVMGenerator
+from generators.dosbox.dosboxGenerator import DosBoxGenerator
 from generators.configManager import ConfigManager
 import controllersConfig as controllers
 import utils.runner as runner
@@ -22,9 +24,11 @@ generators = {
     'libretro': LibretroGenerator(),
     'fba2x': Fba2xGenerator(),
     'mupen64plus': MupenGenerator(),
+    'pokemini': PokeminiGenerator(),
     'kodi': KodiGenerator(),
     'moonlight': MoonlightGenerator(),
-    'scummvm': ScummVMGenerator()
+    'scummvm': ScummVMGenerator(),
+    'dosbox': DosBoxGenerator()
 }
 
 # List emulators with their cores rest mupen64, scummvm
@@ -38,6 +42,7 @@ emulators["gb"] = Emulator(name='gb', emulator='libretro', core='gambatte')
 emulators["gbc"] = Emulator(name='gbc', emulator='libretro', core='gambatte')
 emulators["fds"] = Emulator(name='fds', emulator='libretro', core='nestopia')
 emulators["virtualboy"] = Emulator(name='virtualboy', emulator='libretro', core='vb')
+emulators["pokemini"] = Emulator(name='pokemini', emulator='pokemini')
 # Sega
 emulators["sg1000"] = Emulator(name='sg1000', emulator='libretro', core='genesisplusgx')
 emulators["mastersystem"] = Emulator(name='mastersystem', emulator='libretro', core='picodrive')
@@ -73,6 +78,7 @@ emulators["psx"] = Emulator(name='psx', emulator='libretro', core='pcsx_rearmed'
 emulators["cavestory"] = Emulator(name='cavestory', emulator='libretro', core='nxengine')
 emulators["imageviewer"] = Emulator(name='imageviewer', emulator='libretro', core='imageviewer')
 emulators["scummvm"] = Emulator(name='scummvm', emulator='scummvm', videomode='default')
+emulators["pc"] = Emulator(name='pc', emulator='dosbox', videomode='default')
 
 emulators["kodi"] = Emulator(name='kodi', emulator='kodi', videomode='default')
 emulators["moonlight"] = Emulator(name='moonlight', emulator='moonlight')
@@ -105,6 +111,10 @@ if __name__ == '__main__':
     parser.add_argument("-p4guid", help="player4 controller SDL2 guid", type=str, required=False)
     parser.add_argument("-p4name", help="player4 controller name", type=str, required=False)
     parser.add_argument("-p4devicepath", help="player4 controller device", type=str, required=False)
+    parser.add_argument("-p5index", help="player5 controller index", type=int, required=False)
+    parser.add_argument("-p5guid", help="player5 controller SDL2 guid", type=str, required=False)
+    parser.add_argument("-p5name", help="player5 controller name", type=str, required=False)
+    parser.add_argument("-p5devicepath", help="player5 controller device", type=str, required=False)    
     parser.add_argument("-system", help="select the system to launch", type=str, required=True)
     parser.add_argument("-rom", help="rom absolute path", type=str, required=True)
     parser.add_argument("-emulator", help="force emulator", type=str, required=False)
@@ -119,7 +129,8 @@ if __name__ == '__main__':
         playersControllers = controllers.loadControllerConfig(args.p1index, args.p1guid, args.p1name, args.p1devicepath,
                                                               args.p2index, args.p2guid, args.p2name, args.p2devicepath,
                                                               args.p3index, args.p3guid, args.p3name, args.p3devicepath,
-                                                              args.p4index, args.p4guid, args.p4name, args.p4devicepath)
+                                                              args.p4index, args.p4guid, args.p4name, args.p4devicepath,
+                                                              args.p5index, args.p5guid, args.p5name, args.p5devicepath)
 
     systemName = args.system
 
@@ -136,5 +147,6 @@ if __name__ == '__main__':
 
         command = generators[system.config['emulator']].generate(system, args.rom, playersControllers)
         print(command.array)
-        runner.runCommand(command)
+        exitcode = runner.runCommand(command)
         time.sleep(1)
+        exit(exitcode)
