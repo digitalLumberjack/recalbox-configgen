@@ -23,4 +23,4 @@ class PokeminiGenerator(Generator):
         print romName
         commandArray = ["/usr/emulators/pokemini/PokeMini", rom]
 			
-        return Command.Command(videomode='default', array=commandArray, env={"SDL_VIDEO_GL_DRIVER":"/usr/lib/libGLESv2.so"})
+        return Command.Command(videomode='default', array=commandArray, env={"SDL_VIDEO_GL_DRIVER":"/usr/lib/libGLESv2.so  SDL_NOMOUSE=1"})
