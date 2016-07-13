@@ -33,7 +33,7 @@ reicastMapping = { 'a' :             {'button': 'btn_b'},
 }
 
 sections = { 'emulator' : ['mapping_name', 'btn_escape'],
-             'dreamcast' : ['btn_a', 'btn_b', 'btn_x', 'btn_y', 'btn_start', 'axis_x', 'axis_y', 'axis_trigget_left', 'axis_trigget_right'],
+             'dreamcast' : ['btn_a', 'btn_b', 'btn_x', 'btn_y', 'btn_start', 'btn_dpad1_left', 'btn_dpad1_right', 'btn_dpad1_up', 'btn_dpad1_down', 'axis_x', 'axis_y', 'axis_trigger_left', 'axis_trigger_right'],
              'compat' : ['axis_dpad1_x', 'axis_dpad1_y', 'btn_trigger_left', 'btn_trigger_right']
 
 }
