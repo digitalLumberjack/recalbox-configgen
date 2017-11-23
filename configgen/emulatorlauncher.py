@@ -117,7 +117,7 @@ emulators["imageviewer"] = Emulator(name='imageviewer', emulator='libretro', cor
 emulators["scummvm"] = Emulator(name='scummvm', emulator='scummvm', videomode='default')
 emulators["colecovision"] = Emulator(name='colecovision', emulator='libretro', core='bluemsx')
 emulators["jaguar"] = Emulator(name='jaguar', emulator='libretro', core='virtualjaguar')
-
+emulators["3do"] = Emulator(name='3do', emulator='libretro', core='4do')
 emulators["kodi"] = Emulator(name='kodi', emulator='kodi', videomode='default')
 emulators["moonlight"] = Emulator(name='moonlight', emulator='moonlight')
 emulators["psp"] = Emulator(name='psp', emulator='ppsspp')
